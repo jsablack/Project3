@@ -1,0 +1,12 @@
+<a href="/home/logout">Logout</a>
+<h1>Welcome <%= @username %></h1>
+<form action="/comments" method="post">
+  <input type="text" name="content" placeholder="Tell Me About it" size="255"/>
+  <button>~*~Comment~*~</button>
+</form>
+
+<ul>
+<% @tweets.each do |tweet| %>
+  <li><%= tweet.content %> - <%= tweet.user.username %></li>
+<%end%>
+</ul>
