@@ -1,4 +1,4 @@
-class Course < ActiveRecord::Base
+class Comment < ActiveRecord::Base
 
   belongs_to :users
   belongs_to :locations

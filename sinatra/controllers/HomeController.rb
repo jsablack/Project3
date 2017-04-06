@@ -1,6 +1,17 @@
 class HomeController < ApplicationController
 
+  options "*" do
+    response.headers["Allow"] = "HEAD,GET,POST,PUT,PATCH,DELETE,OPTIONS"
+
+    # Needed for AngularJS
+    response.headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept"
+    response['Access-Control-Allow-Origin'] = '*'
+
+    "cool"
+  end
+
   get '/' do
+    response['Access-Control-Allow-Origin'] = '*'
     p session
     if session[:logged_in]
       @username = session[:username]
@@ -27,6 +38,8 @@ class HomeController < ApplicationController
   end
 
   post '/login' do
+   response['Access-Control-Allow-Origin'] = '*'
+
     username = params[:username]
     password = params[:password]
 
@@ -44,6 +57,8 @@ class HomeController < ApplicationController
   end
 
   post '/register' do
+   response['Access-Control-Allow-Origin'] = '*'
+
     user = User.new
 
     user.username = params["username"]

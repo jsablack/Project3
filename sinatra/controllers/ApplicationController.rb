@@ -15,4 +15,8 @@ class ApplicationController < Sinatra::Base
   set :public_dir, File.expand_path('../../public', __FILE__)
 
   set :session_secret, 'test'
+
+  get '/' do
+    erb :home
+  end
 end
