@@ -3,13 +3,13 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch');
 
 	gulp.task('watch', function(){
-		gulp.watch(['./public/styles/*.less'], ['compile-less'])
+		gulp.watch(['./public/css/*.less'], ['compile-less'])
 	});
 
 	gulp.task('compile-less', function(){
-		gulp.src('./public/styles/*.less')
+		gulp.src('./public/css/*.less')
 		.pipe(less())
-		.pipe(gulp.dest('./public/styles/'));
+		.pipe(gulp.dest('./public/css/'));
 	})
 
 	gulp.task('default', ['compile-less', 'watch']);

@@ -32,7 +32,7 @@ class CommentController < ApplicationController
     content_type :json
 
     comment = JSON.parse(request.body.read)
-    @comment = Comment.new
+    @comment = Comment.find(id)
     @comment.content = params["content"]
     @comment.user.id = session[:user_id]
 
@@ -44,8 +44,12 @@ class CommentController < ApplicationController
   end
 
   delete '/:id' do
+    content_type :json
 
+    comment = JSON.parse(request.body.read)
     @comment = Comment.find(id)
+    @comment.content = params["content"]
+    @comment.user.id = session[:user_id]
     @comment.destroy
 
     @comments = Comment.all

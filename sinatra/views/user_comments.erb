@@ -2,6 +2,11 @@
 
 <ul>
 	<% @user.comments.each do |comment| %>
-	  <li><%= comment.content %> - <%= comment.user.username %></li>
+	 	<li><%= comment.content %> - <%= comment.user.username %>
+	  
+		<button class=“update” data-id=<%= comment.id%>>Update</button>
+		<button class=“delete” data-id=<%= comment.id%>>Delete</button>
+	  </li>
 	<% end %>
 </ul>
+
