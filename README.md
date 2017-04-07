@@ -13,7 +13,8 @@ Gulp
 1. I am making a full stack app that will allow the user to find free wifi networks in Chicago and also comment on/read other user's comments on the networks & the locations that host the network.
 
 2. I initially started putting together this app with React & Sinatra. This was Monday, 04/03/2017
-    * I knew I didn't fully understand React as the logic got deeper and modals came into play. * But I thought I could figure it out and React was freshest in my mind as we had spent the last week of class learning and using it.
+    * I knew I didn't fully understand React as the logic got deeper and modals came into play.
+    * But I thought I could figure it out and React was freshest in my mind as we had spent the last week of class learning and using it.
     * I was very wrong. Made a complete mess of it. Became horribly confused and also horribly broke the code.
 
 3. So on early Tuesday 04/04/2017 afternoon, I decided to scrap the React portion of the code and rewrite it.
